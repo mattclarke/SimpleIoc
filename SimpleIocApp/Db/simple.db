@@ -1,0 +1,4 @@
+record(ai, "$(P)VALUE1")
+{
+	field(VAL, 2)
+}
