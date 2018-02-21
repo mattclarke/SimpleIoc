@@ -7,7 +7,7 @@ record(bi, "$(P)ENABLED")
 {
 	field(VAL, 0)
 	field(ZNAM, "OFF")
-	field(ZNAM, "ON")
+	field(ONAM, "ON")
 }
 
 alias("$(P)ENABLED", "$(P)ENABLED:SP")
