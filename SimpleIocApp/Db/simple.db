@@ -3,6 +3,9 @@ record(ai, "$(P)VALUE1")
 	field(VAL, 2)
 }
 
+alias("$(P)VALUE1", "$(P)VALUE1:SP")
+alias("$(P)VALUE1", "$(P)VALUE1:RBV")
+
 record(bi, "$(P)ENABLED")
 {
 	field(VAL, 0)
@@ -12,4 +15,19 @@ record(bi, "$(P)ENABLED")
 
 alias("$(P)ENABLED", "$(P)ENABLED:SP")
 
+record(ai, "$(P)VALUE2")
+{
+	field(VAL, 10)
+	field(LOW, 2)
+	field(LSV, "MINOR")
+	field(LOLO, 0)
+	field(LLSV, "MAJOR")
+	field(HIGH, 18)
+	field(HSV, "MINOR")
+	field(HIHI, 20)
+	field(HHSV, "MAJOR")
 
+}
+
+alias("$(P)VALUE2", "$(P)VALUE2:SP")
+alias("$(P)VALUE2", "$(P)VALUE2:RBV")
