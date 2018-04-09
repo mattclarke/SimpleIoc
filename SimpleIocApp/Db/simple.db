@@ -31,3 +31,8 @@ record(ai, "$(P)VALUE2")
 
 alias("$(P)VALUE2", "$(P)VALUE2:SP")
 alias("$(P)VALUE2", "$(P)VALUE2:RBV")
+
+record(stringin, "$(P)STRVALUE1")
+{
+	field(VAL, "Hello")
+}
