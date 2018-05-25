@@ -36,3 +36,23 @@ record(stringin, "$(P)STRVALUE1")
 {
 	field(VAL, "Hello")
 }
+
+record(stringin, "$(P)UNITS")
+{
+	field(SCAN, "1 second")
+	field(VAL, "K")
+}
+
+# Forward units from one PV to another's EGU
+# PP will cause the target record to process.
+# Use NPP if you don't want that (e.g. on a setpoint)
+# CP causes the record to process whenever the PV
+# being watched updates.
+# CPP could be used too.
+record(stringout, "$(P):UNITS_SET")
+{
+  field(DESC, "Push units from one pv to another")
+  field(DOL, "$(P)UNITS CP")
+	field(OMSL, "closed_loop")
+  field(OUT,  "$(P)VALUE1.EGU PP")
+}
