@@ -48,11 +48,21 @@ record(stringin, "$(P)UNITS")
 # Use NPP if you don't want that (e.g. on a setpoint)
 # CP causes the record to process whenever the PV
 # being watched updates.
-# CPP could be used too.
-record(stringout, "$(P):UNITS_SET")
+# CPP could be used too ().
+record(stringout, "$(P)UNITS_SET")
 {
   field(DESC, "Push units from one pv to another")
   field(DOL, "$(P)UNITS CP")
 	field(OMSL, "closed_loop")
   field(OUT,  "$(P)VALUE1.EGU PP")
 }
+
+# Debugging: to see when a record is processed
+# set TPRO to 1
+record(ai, "$(P)VALUE3")
+{
+	field(VAL, 2)
+	field(TPRO, 1)
+}
+
+# TODO: collecting alarms
