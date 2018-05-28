@@ -123,7 +123,29 @@ record(ai, "$(P)RESULT")
 {
 }
 
-# TODO: use calcout to do a conditional
+record(calcout, "$(P)CALCOUT_COND")
+{
+	# Use calc to determine whether to write out value
+	# in conjunction with OOPT
+	field(CALC, "A>=B?1:0")
+	field(OOPT, "When Non-zero")
+
+	# Second calculated value
+	field(OCAL, "A+B")
+	# Which result to send to OUT - can be changed at runtime
+	field(DOPT, "Use OCAL")
+
+	# Inputs
+	field(INPA, "$(P)ALARM1 CP")
+	field(INPB, "$(P)ALARM2 CP")
+
+	# Outputs
+	field(OUT, "$(P)RESULT PP")
+}
+
+record(ai, "$(P)COND_RESULT")
+{
+}
 
 # Requires transform record to be installed
 record (transform, "$(P)PROPAGATE_ALARM")
