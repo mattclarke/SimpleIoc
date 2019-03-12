@@ -109,9 +109,11 @@ record(calc, "$(P)CALC1")
 
 # Calcout is like calc but it writes the result to another record.
 # Can also forward alarms as above
+# This gives the value of B but with the alarms from A.
 record(calcout, "$(P)CALCOUT1")
 {
-	field(CALC, "A+B")
+	field(CALC, "B")
+	# Get the alarm from A
 	field(INPA, "$(P)ALARM1 CP MSS")
 	# Ignore the alarm from input B
 	field(INPB, "$(P)ALARM2 CP NMS")
@@ -148,18 +150,18 @@ record(ai, "$(P)COND_RESULT")
 }
 
 # Requires transform record to be installed
-record (transform, "$(P)PROPAGATE_ALARM")
-{
-	field(DESC, "Propagates the alarm from one PV to another")
-	# Always calculate
-  field(COPT, "Always")
-	# Input links
-	field(INPE, "$(P)ALARM2.VAL NPP NMS")
-	field(INPF, "$(P)ALARM1 NPP MS")
-	# Expression - take the value from E and send it to B
-	field(CLCB, "E")
-	# Output the value with the alarms from F
-	field(OUTB, "$(P)ALARM2.VAL PP MS")
-	field(PREC, "3")
-	#field(SDIS, "$(P)$(SLIT)$(S1)_SPALT.PACT")
-}
+#record (transform, "$(P)PROPAGATE_ALARM")
+#{
+#	field(DESC, "Propagates the alarm from one PV to another")
+#	# Always calculate
+# field(COPT, "Always")
+#	# Input links
+#	field(INPE, "$(P)ALARM2.VAL NPP NMS")
+#	field(INPF, "$(P)ALARM1 NPP MS")
+#	# Expression - take the value from E and send it to B
+#	field(CLCB, "E")
+#	# Output the value with the alarms from F
+#	field(OUTB, "$(P)ALARM2.VAL PP MS")
+#	field(PREC, "3")
+#	#field(SDIS, "$(P)$(SLIT)$(S1)_SPALT.PACT")
+#}
