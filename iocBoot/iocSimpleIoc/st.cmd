@@ -13,4 +13,5 @@ SimpleIoc_registerRecordDeviceDriver(pdbbase)
 dbLoadRecords("../../db/simple.db","P=SIMPLE:")
 
 iocInit()
+startPVAServer
 

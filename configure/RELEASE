@@ -29,8 +29,18 @@
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver
 
+EPICS4_DIR=/opt/epics/V4
+PVDATABASE=${EPICS4_DIR}/pvDatabaseCPP
+PVASRV=${EPICS4_DIR}/pvaSrv
+PVACCESS=${EPICS4_DIR}/pvAccessCPP
+PVDATA=${EPICS4_DIR}/pvDataCPP
+PVCOMMON=${EPICS4_DIR}/pvCommonCPP
+NORMATIVETYPES=${EPICS4_DIR}/normativeTypesCPP
+PVACLIENT=${EPICS4_DIR}/pvaClientCPP
+
 # EPICS_BASE should appear last so earlier modules can override stuff:
-EPICS_BASE = /opt/epics/base
+EPICS_BASE = /opt/epics/base/
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
 # Set RULES here if you want to use build rules from somewhere
 # other than EPICS_BASE:
@@ -40,4 +50,3 @@ EPICS_BASE = /opt/epics/base
 # without having to modify the configure/RELEASE file itself.
 -include $(TOP)/../RELEASE.local
 -include $(TOP)/configure/RELEASE.local
-
