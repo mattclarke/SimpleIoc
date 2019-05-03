@@ -50,10 +50,10 @@ record(stringin, "$(P)UNITS")
 # CPP could be used too ().
 record(stringout, "$(P)UNITS_SET")
 {
-  field(DESC, "Push units from one pv to another")
-  field(DOL, "$(P)UNITS CP")
+  	field(DESC, "Push units from one pv to another")
+  	field(DOL, "$(P)UNITS CP")
 	field(OMSL, "closed_loop")
-  field(OUT,  "$(P)VALUE1.EGU PP")
+  	field(OUT,  "$(P)VALUE1.EGU PP")
 }
 
 # Debugging: to see when a record is processed
