@@ -15,6 +15,20 @@ record(bi, "$(P)ENABLED")
 
 alias("$(P)ENABLED", "$(P)ENABLED:SP")
 
+record(mbbi, "$(P)MBBI")
+{
+	field(VAL, 0)
+	field(ZRST, "ZERO")
+	field(ZRVL, 0)
+	field(ONST, "ONE")
+	field(ONVL, 1)
+	field(TWST, "TWO")
+	field(TWVL, 2)
+	field(THST, "THREE")
+	field(THVL, 3)
+
+}
+
 record(ai, "$(P)VALUE2")
 {
 	field(VAL, 10)
