@@ -14,6 +14,7 @@ DBD += SimpleIoc.dbd
 
 # SimpleIoc.dbd will be made up from these files:
 SimpleIoc_DBD += base.dbd
+SimpleIoc_DBD += PVAServerRegister.dbd qsrv.dbd
 
 # Include dbd files from all support applications:
 #SimpleIoc_DBD += xxx.dbd
@@ -33,6 +34,8 @@ SimpleIoc_SRCS_vxWorks += -nil-
 
 # Finally link to the EPICS Base libraries
 SimpleIoc_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+SimpleIoc_LIBS += pvDatabase pvAccess pvData pvAccessIOC qsrv
 
 #===========================
 
