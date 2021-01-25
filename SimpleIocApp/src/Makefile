@@ -35,6 +35,7 @@ SimpleIoc_SRCS_vxWorks += -nil-
 # Finally link to the EPICS Base libraries
 SimpleIoc_LIBS += $(EPICS_BASE_IOC_LIBS)
 
+# TODO: Only qsrv required?
 SimpleIoc_LIBS += pvDatabase pvAccess pvData pvAccessIOC qsrv
 
 #===========================
