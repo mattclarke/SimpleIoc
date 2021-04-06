@@ -1,7 +1,7 @@
-#!../../bin/linux-x86_64/SimpleIoc
+#!../../bin/darwin-x86/SimpleIoc
 
-## You may have to change SimpleIoc to something else
-## everywhere it appears in this file
+#- You may have to change SimpleIoc to something else
+#- everywhere it appears in this file
 
 #< envPaths
 
@@ -13,5 +13,3 @@ SimpleIoc_registerRecordDeviceDriver(pdbbase)
 dbLoadRecords("../../db/simple.db","P=SIMPLE:")
 
 iocInit()
-startPVAServer
-
