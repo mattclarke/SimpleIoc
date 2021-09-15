@@ -50,6 +50,18 @@ record(stringin, "$(P)STRVALUE1")
 	field(VAL, "Hello")
 }
 
+record(aai, "$(P)AAI")
+{
+    field(NELM, 5)
+    field(FTVL, 7)
+}
+
+record(waveform, "$(P)WAVE")
+{
+    field(NELM, 5)
+    field(FTVL, 7)
+}
+
 record(stringin, "$(P)UNITS")
 {
 	field(SCAN, "1 second")
