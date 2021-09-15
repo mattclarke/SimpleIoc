@@ -62,6 +62,12 @@ record(waveform, "$(P)WAVE")
     field(FTVL, 7)
 }
 
+record(waveform, "$(P)CHARWAVE")
+{
+    field(NELM, 5)
+    field(FTVL, 1)
+}
+
 record(stringin, "$(P)UNITS")
 {
 	field(SCAN, "1 second")
