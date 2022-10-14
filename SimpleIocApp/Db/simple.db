@@ -29,6 +29,13 @@ record(mbbi, "$(P)MBBI")
 
 }
 
+record(bi, "$(P)BI")
+{
+    field(VAL, 0)
+    field(ZNAM, "ZERO")
+    field(ONAM, "ONE")
+}
+
 record(ai, "$(P)VALUE2")
 {
 	field(VAL, 10)
@@ -66,6 +73,12 @@ record(waveform, "$(P)CHARWAVE")
 {
     field(NELM, 5)
     field(FTVL, 1)
+}
+
+record(waveform, "$(P)STRWAVE")
+{
+    field(NELM, 5)
+    field(FTVL, 0)
 }
 
 record(stringin, "$(P)UNITS")

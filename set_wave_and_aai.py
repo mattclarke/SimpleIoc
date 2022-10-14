@@ -12,6 +12,10 @@ def generate_char_data():
     return "".join([chr(97 + random.randint(0, 25)) for _ in range(5)])
 
 
+def generate_str_data():
+    return ['123', 'hello'] 
+
+
 def update_record(name, data, as_str=False):
     print(name)
     p = PV(name)
@@ -21,5 +25,6 @@ def update_record(name, data, as_str=False):
 
 update_record(f"{PV_ROOT}WAVE", generate_data())
 update_record(f"{PV_ROOT}CHARWAVE", generate_char_data(), True)
+update_record(f"{PV_ROOT}STRWAVE", generate_str_data(), True)
 update_record(f"{PV_ROOT}AAI", generate_data())
 
