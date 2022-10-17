@@ -4,16 +4,21 @@ import random
 
 PV_ROOT = "SIMPLE:"
 
-def generate_data():
-    return [random.randint(0, 20) for _ in range(5)]
 
+def generate_data():
+    data = [1, 5, 10, 3, 0]
+    random.shuffle(data)
+    return data
 
 def generate_char_data():
-    return "".join([chr(97 + random.randint(0, 25)) for _ in range(5)])
-
+    data = [chr(97), chr(98), chr(99), chr(100), chr(101)]
+    random.shuffle(data)
+    return "".join(data)
 
 def generate_str_data():
-    return ['123', 'hello'] 
+    data = ["hello", "goodbye", "ciao", "hej", "shrug"]
+    random.shuffle(data)
+    return data
 
 
 def update_record(name, data, as_str=False):
