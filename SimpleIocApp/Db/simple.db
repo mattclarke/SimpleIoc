@@ -29,9 +29,17 @@ record(mbbi, "$(P)MBBI")
 
 }
 
+record(bi, "$(P)BI")
+{
+    field(VAL, 0)
+    field(ZNAM, "ZERO")
+    field(ONAM, "ONE")
+}
+
 record(ai, "$(P)VALUE2")
 {
-	field(VAL, 10)
+	field(VAL, 20)
+    field(PINI, 1)
 	field(LOW, 2)
 	field(LSV, "MINOR")
 	field(LOLO, 0)
@@ -48,6 +56,30 @@ alias("$(P)VALUE2", "$(P)VALUE2:RBV")
 record(stringin, "$(P)STRVALUE1")
 {
 	field(VAL, "Hello")
+}
+
+record(aai, "$(P)AAI")
+{
+    field(NELM, 5)
+    field(FTVL, 7)
+}
+
+record(waveform, "$(P)WAVE")
+{
+    field(NELM, 5)
+    field(FTVL, 7)
+}
+
+record(waveform, "$(P)CHARWAVE")
+{
+    field(NELM, 5)
+    field(FTVL, 1)
+}
+
+record(waveform, "$(P)STRWAVE")
+{
+    field(NELM, 5)
+    field(FTVL, 0)
 }
 
 record(stringin, "$(P)UNITS")
