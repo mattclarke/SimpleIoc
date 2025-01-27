@@ -1,7 +1,8 @@
 # Simple script to write random values to the waveform and aai records
-from epics import PV
 import random
+from p4p.client.thread import Context
 
+_CONTEXT = Context('pva', nt=False)
 PV_ROOT = "SIMPLE:"
 
 
@@ -10,10 +11,12 @@ def generate_data():
     random.shuffle(data)
     return data
 
+
 def generate_char_data():
     data = [chr(97), chr(98), chr(99), chr(100), chr(101)]
     random.shuffle(data)
     return "".join(data)
+
 
 def generate_str_data():
     data = ["hello", "goodbye", "ciao", "hej", "shrug"]
@@ -23,12 +26,11 @@ def generate_str_data():
 
 def update_record(name, data, as_str=False):
     print(name)
-    p = PV(name)
-    p.put(data, wait=True)
-    print(p.get(as_string=as_str))
+    _CONTEXT.put(name, data, wait=True)
+    print(_CONTEXT.get(name).value)
 
 
-update_record(f"{PV_ROOT}WAVE", generate_data())
+update_record(f"{PV_ROOT}WAVE", [x for x in range(500)])
 update_record(f"{PV_ROOT}CHARWAVE", generate_char_data(), True)
 update_record(f"{PV_ROOT}STRWAVE", generate_str_data(), True)
 update_record(f"{PV_ROOT}AAI", generate_data())
